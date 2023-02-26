@@ -10,6 +10,9 @@ namespace NZWalks.API.Models.Domain
 		public double Lat { get; set; }
 		public double Long { get; set; }
 		public long Population { get; set; }
+
+		// Navigation Property
+		public IEnumerable<Walk> Walks { get; set; }
 	}
 }
 
