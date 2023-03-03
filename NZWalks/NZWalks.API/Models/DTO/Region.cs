@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 namespace NZWalks.API.Models.DTO
 {
 	public class Region
@@ -12,6 +11,6 @@ namespace NZWalks.API.Models.DTO
         public double Long { get; set; }
         public long Population { get; set; }
 
-	}
+    }
 }
 

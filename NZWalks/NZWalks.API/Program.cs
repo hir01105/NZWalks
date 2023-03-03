@@ -18,6 +18,8 @@ builder.Services.AddDbContext<NZWalksDbContext>(options =>
 
 builder.Services.AddScoped<IRegionRepositiory, RegionRepository>();
 
+builder.Services.AddScoped<IWalkRepository, WalkRepository>();
+
 // AutomappserのDI 引数にProgram.Assemblyとすることでビルドする際に含まれている全てのprofileを読み込んでくれる。
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
