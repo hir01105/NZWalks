@@ -20,6 +20,8 @@ builder.Services.AddScoped<IRegionRepositiory, RegionRepository>();
 
 builder.Services.AddScoped<IWalkRepository, WalkRepository>();
 
+builder.Services.AddScoped<IWalkDifficultyRepository, WalkDifficultyRepository>();
+
 // AutomappserのDI 引数にProgram.Assemblyとすることでビルドする際に含まれている全てのprofileを読み込んでくれる。
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
