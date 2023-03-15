@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using NZWalks.API.Models.Domain;
 using NZWalks.API.Repositories;
 using NZWalks.API.Models.DTO;
+using Microsoft.AspNetCore.Authorization;
 
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -75,6 +76,7 @@ namespace NZWalks.API.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> AddRegionAsync(AddRegionRequest addRegionRequest)
         {
             // Validate The Request
@@ -116,6 +118,7 @@ namespace NZWalks.API.Controllers
 
         [HttpDelete]
         [Route("{id:guid}")]
+        [Authorize]
         public async Task<IActionResult> DeleteRegionAsync(Guid id)
         {
             // Get region from database
@@ -146,6 +149,7 @@ namespace NZWalks.API.Controllers
 
         [HttpPut]
         [Route("{id:guid}")]
+        [Authorize]
         public async Task<IActionResult> UpdateRegionAsync([FromRoute] Guid id, [FromBody] UpdateRegionRequest updateRegionRequest)
         {
 
