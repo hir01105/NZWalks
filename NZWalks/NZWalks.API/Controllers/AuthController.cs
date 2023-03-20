@@ -30,11 +30,13 @@ namespace NZWalks.API.Controllers
 
             // Check if user is authenticated
             // Check username and password
-            var isAuthenticated = await userRepository.AuthenticateAsync(loginRequest.Username, loginRequest.Password);
+            var user = await userRepository.AuthenticateAsync(loginRequest.Username, loginRequest.Password);
 
-			if (isAuthenticated)
+			if (user != null)
 			{
 				// Generate a JWT Token
+				var token = await tokenHandler.CreateTokenAsync(user);
+				return Ok(token);
 			}
 
 			return BadRequest("Username or Password is incorrect");
